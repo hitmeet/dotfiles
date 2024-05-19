@@ -1,6 +1,16 @@
-# dotfiles
-
-Prerequesities:
-
-```brew```
-true color terminal( kitty, alacritty, iTerm2, tilix, konsole )
+- Prerequisites tools/packages
+	- ```xclip``` copy/paste to and from stdin and stdout
+	- ```nvim```
+	- ```fzf```
+	- ```ripgrep```
+	- ```alacritty``` [alacritty-installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+	- ```autojump```
+	- ```lsd```
+	- ```nerd fonts```
+	- ```neofetch (of course)```
+	- ```tmux```
+	- ```powerlevel10k```
+	- ```zsh-autosuggestions```
+	- ```most```  for colored man pages
+	- ```zsh-syntax-highlighting```
+	- ```bat``` better cat 
