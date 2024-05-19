@@ -4,7 +4,6 @@ alias pbpaste='xclip -selection clipboard -o'
 
 export PATH=$PATH:/home/meet/.cargo/bin
 
-
 export EXTERNAL_GIT_PATH=~/personal/external-git
 export EXTERNAL_THEME_PATH=~/personal/themes
 
@@ -50,3 +49,6 @@ export PAGER="/usr/bin/most -s"
 command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 alias l="ls -la"
+
+# if thefuck is installed (to correct previoud command)
+eval $(thefuck --alias f) 
