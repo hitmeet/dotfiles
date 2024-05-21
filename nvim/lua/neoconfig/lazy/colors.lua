@@ -10,8 +10,7 @@ function SetTheme()
   local themeMap = {}
   themeMap[1] = "rose-pine"
   themeMap[2] = "catppuccin"
-  themeMap[3] = "sonokai"
-  local theme = themeMap[math.random(1, 3)]
+  local theme = themeMap[math.random(1, 2)]
   print(theme)
   ColorMyPencils(theme)
 end
@@ -21,10 +20,6 @@ return {
   {
     "catppuccin/nvim",
     name = 'catppuccin'
-  },
-  {
-    "sainnhe/sonokai",
-    name = "sonokai"
   },
   {
     "rose-pine/neovim",
