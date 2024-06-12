@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+
+import random
+import toml
+import os
+
+
+def gen_num(list_length):
+    return random.randint(0, list_length)
+
+
+base_path = "/home/meet/personal/themes/alacritty-theme/themes/"
+files = os.listdir(base_path)
+random_number = gen_num(len(files))
+theme = files[random_number]
+
+print(theme)
+
+with open('/home/meet/personal/git/dotfiles/alacritty/alacritty.toml', 'r') as toml_config:
+    config = toml.load(toml_config)
+    config['import'] = [base_path + theme]
+
+with open('/home/meet/personal/git/dotfiles/alacritty/new_alacritty.toml', 'w') as new_toml_config:
+    toml.dump(config, new_toml_config)
+
+os.popen("cp /home/meet/personal/git/dotfiles/alacritty/alacritty.toml /home/meet/personal/git/dotfiles/alacritty/alacritty-bak.toml").read()
+os.popen("mv /home/meet/personal/git/dotfiles/alacritty/new_alacritty.toml /home/meet/personal/git/dotfiles/alacritty/alacritty.toml").read()

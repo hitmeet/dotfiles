@@ -46,9 +46,18 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PAGER="/usr/bin/most -s"
 
 # lsd installtion required (better ls)
-command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
+command -v lsd > /dev/null && alias ls='lsd -a --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 alias l="ls -la"
 
 # if thefuck is installed (to correct previoud command)
 eval $(thefuck --alias f) 
+
+export PATH=$PATH:/home/meet/local/bin
+
+alias bat="bat --theme='Monokai Extended'"
+command -v cat > /dev/null && alias cat='bat --pager=never'
+command -v less > /dev/null && alias less='bat'
+
+source <(fzf --zsh)
+alias cd="j"
