@@ -36,7 +36,7 @@ return {
           italic = false,
         },
       })
-      SetTheme() 
+      SetTheme()
     end
   },
 }

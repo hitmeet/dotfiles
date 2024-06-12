@@ -13,5 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = "neoconfig.lazy",
-    change_detection = { notify = true}
+    checker = {
+      enabled = true,
+      notify = false,
+    },
+    change_detection = { notify = false}
 })
+

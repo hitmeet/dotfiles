@@ -1,4 +1,4 @@
-import = [ "/home/meet/personal/themes/alacritty-theme/themes/pencil_dark.toml",]
+import = [ "/home/meet/personal/themes/alacritty-theme/themes/terminal_app.toml",]
 
 [shell]
 program = "/bin/zsh"
