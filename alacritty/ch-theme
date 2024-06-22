@@ -16,6 +16,7 @@ theme = files[random_number]
 
 print(theme)
 
+
 with open('/home/meet/personal/git/dotfiles/alacritty/alacritty.toml', 'r') as toml_config:
     config = toml.load(toml_config)
     config['import'] = [base_path + theme]

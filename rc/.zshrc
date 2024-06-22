@@ -60,4 +60,3 @@ command -v cat > /dev/null && alias cat='bat --pager=never'
 command -v less > /dev/null && alias less='bat'
 
 source <(fzf --zsh)
-alias cd="j"
