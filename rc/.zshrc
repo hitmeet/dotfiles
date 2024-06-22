@@ -52,6 +52,7 @@ alias l="ls -la"
 
 # if thefuck is installed (to correct previoud command)
 eval $(thefuck --alias f) 
+eval $(thefuck --alias)
 
 export PATH=$PATH:/home/meet/local/bin
 
