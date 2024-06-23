@@ -23,5 +23,3 @@
 - ToDo
     - telescope bg
     - lsp config
-    - tmux config
-    - fzf and bat integration
