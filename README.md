@@ -9,8 +9,17 @@
 	- ```nerd fonts```
 	- ```neofetch (of course)```
 	- ```tmux```
-	- ```powerlevel10k```
-	- ```zsh-autosuggestions```
-	- ```most```  for colored man pages
-	- ```zsh-syntax-highlighting```
+    - ```most```  for colored man pages
 	- ```bat``` better cat 
+	- ```fd``` better find
+	- ```fzf-tmux``` 
+	- ```git-delta``` 
+- External packages
+    - ```zsh-autosuggestions```
+    - ```zsh-syntax-highlighting```
+    - ```powerlevel10k```
+    - ```alacritty-themes```
+    - ```fzf-git (different than fzf)```
+- ToDo
+    - telescope bg
+    - lsp config
