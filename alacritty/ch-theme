@@ -3,19 +3,25 @@
 import random
 import toml
 import os
+import sys
 
 
 def gen_num(list_length):
     return random.randint(0, list_length)
 
-
 base_path = "/home/meet/personal/themes/alacritty-theme/themes/"
-files = os.listdir(base_path)
-random_number = gen_num(len(files))
-theme = files[random_number]
-
-print(theme)
-
+theme = ""
+if (len(sys.argv) < 2):
+    files = os.listdir(base_path)
+    random_number = gen_num(len(files))
+    theme = files[random_number]
+    print(f"Random theme - {theme}")
+elif (sys.argv[1] == "-m"):
+    theme = os.popen("ls -la /home/meet/personal/themes/alacritty-theme/themes | awk '{print $9}' | fzf").read()
+    theme = theme.strip().split()[0]
+else:
+    theme = sys.argv[1]
+    print(f"Selected theme - {theme}")
 
 with open('/home/meet/personal/git/dotfiles/alacritty/alacritty.toml', 'r') as toml_config:
     config = toml.load(toml_config)
