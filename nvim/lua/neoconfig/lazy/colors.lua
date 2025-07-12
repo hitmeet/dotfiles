@@ -11,9 +11,10 @@ function SetTheme()
   themeMap[1] = "rose-pine"
   themeMap[2] = "catppuccin"
   themeMap[3] = "sonokai"
-  local theme = themeMap[math.random(1, 3)]
-  print(theme)
-  ColorMyPencils(theme)
+  --local theme = themeMap[math.random(1, 3)]
+  --print(theme)
+  --ColorMyPencils(theme)
+  ColorMyPencils(themeMap[3])
 end
 
 
