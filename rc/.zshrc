@@ -24,7 +24,7 @@ source $(rpm -ql zsh-syntax-highlighting | grep "zsh-syntax-highlighting\.zsh")
 export PAGER="/usr/bin/most -s"
 
 # lsd installtion required (better ls)
-command -v lsd > /dev/null && alias ls='lsd -a --group-dirs first'
+command -v lsd > /dev/null && alias ls='lsd --group-dirs first'
 command -v lsd > /dev/null && alias tree='lsd --tree'
 alias l="ls -la"
 
@@ -71,3 +71,6 @@ _fzf_comprun(){
     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
+
+export PATH=$PATH:$HOME/.local/bin
+eval "$(oh-my-posh init zsh --config $HOME/develop/dotfiles/oh-my-posh/oh-my-posh.toml)"

@@ -7,7 +7,6 @@ else
   echo "NVIM config exists... Skipping"
 fi
 
-
 current_hypr=$(pwd)/hypr
 if [ ! -L ~/.config/hypr ]; then
   echo -n "Hyprland config does not exist... "
@@ -17,7 +16,6 @@ else
   echo "Hyprland config exists... Skipping"
 fi
 
-
 current_zshrc=$(pwd)/rc/.zshrc
 if [ ! -L ~/.zshrc ]; then
   echo -n "zshrc does not exist... "
@@ -25,4 +23,22 @@ if [ ! -L ~/.zshrc ]; then
   ln -s $current_zshrc ~/.zshrc
 else
   echo "zshrc config exists... Skipping"
+fi
+
+current_ghostty=$(pwd)/ghostty
+if [ ! -L ~/.config/ghostty ]; then
+  echo -n "Ghostty config does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_ghostty ~/.config/ghostty
+else
+  echo "Ghostty config exists... Skipping"
+fi
+
+current_tmux=$(pwd)/tmux
+if [ ! -L ~/.config/tmux ]; then
+  echo -n "tmux config does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_tmux ~/.config/tmux
+else
+  echo "tmux config exists... Skipping"
 fi

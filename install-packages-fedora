@@ -3,3 +3,17 @@ sudo dnf install -y $(cat packages)
 sudo dnf install -y $(cat hypr-packages)
 #sudo dnf copr enable scottames/ghostty
 #sudo dnf install ghostty
+
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  echo "Installing Tmux plugin manager"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+  echo "Skipping Tmux plugin manager installation"
+fi
+
+if command -v oh-my-posh >/dev/null 2>&1; then
+  echo "Oh my Posh found skipping the installation"
+else
+  echo "Installing oh-my-posh.."
+  curl -s https://ohmyposh.dev/install.sh | bash -s
+fi
