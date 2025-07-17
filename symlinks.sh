@@ -17,3 +17,12 @@ else
   echo "Hyprland config exists... Skipping"
 fi
 
+
+current_zshrc=$(pwd)/rc/.zshrc
+if [ ! -L ~/.zshrc ]; then
+  echo -n "zshrc does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_zshrc ~/.zshrc
+else
+  echo "zshrc config exists... Skipping"
+fi

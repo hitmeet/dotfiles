@@ -4,7 +4,6 @@ vim
 dnf-plugins-core 
 thunar 
 zsh
-stow
 wl-clipboard
 git
 neovim
@@ -13,3 +12,6 @@ go
 lsd
 fzf
 bat
+autojump-zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
