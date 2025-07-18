@@ -16,6 +16,15 @@ else
   echo "Hyprland config exists... Skipping"
 fi
 
+current_waybar=$(pwd)/waybar
+if [ ! -L ~/.config/waybar ]; then
+  echo -n "Waybar config does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_waybar ~/.config/waybar
+else
+  echo "waybar config exists... Skipping"
+fi
+
 current_zshrc=$(pwd)/rc/.zshrc
 if [ ! -L ~/.zshrc ]; then
   echo -n "zshrc does not exist... "

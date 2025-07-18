@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+sudo dnf copr enable solopasha/hyprland -y
 sudo dnf install -y $(cat packages)
 sudo dnf install -y $(cat hypr-packages)
 #sudo dnf copr enable scottames/ghostty
 #sudo dnf install ghostty
+
+sudo dnf remove kitty wofi -y
 
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   echo "Installing Tmux plugin manager"
@@ -17,3 +20,4 @@ else
   echo "Installing oh-my-posh.."
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
+

@@ -17,3 +17,5 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 most
 tmux
+NetworkManager
+nm-connection-editor

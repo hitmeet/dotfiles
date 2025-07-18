@@ -74,3 +74,12 @@ _fzf_comprun(){
 
 export PATH=$PATH:$HOME/.local/bin
 eval "$(oh-my-posh init zsh --config $HOME/develop/dotfiles/oh-my-posh/oh-my-posh.toml)"
+
+hypershot_dir=~/screenshots/
+if [ ! -d "$hypershot_dir" ]; then
+  mkdir -p $hypershot_dir
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
