@@ -7,6 +7,15 @@ else
   echo "NVIM config exists... Skipping"
 fi
 
+current_fastfetch=$(pwd)/fastfetch
+if [ ! -L ~/.config/fastfetch ]; then
+  echo -n "Fastfetch config does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_fastfetch ~/.config/fastfetch
+else
+  echo "fastfetch config exists... Skipping"
+fi
+
 current_hypr=$(pwd)/hypr
 if [ ! -L ~/.config/hypr ]; then
   echo -n "Hyprland config does not exist... "
