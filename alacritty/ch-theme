@@ -9,7 +9,10 @@ import sys
 def gen_num(list_length):
     return random.randint(0, list_length)
 
-base_path = "/home/meet/personal/themes/alacritty-theme/themes/"
+home_dir = str(os.getenv("HOME"))
+
+base_path = home_dir + "/develop/themes/alacritty-theme/themes/"
+
 theme = ""
 if (len(sys.argv) < 2):
     files = os.listdir(base_path)
@@ -17,18 +20,22 @@ if (len(sys.argv) < 2):
     theme = files[random_number]
     print(f"Random theme - {theme}")
 elif (sys.argv[1] == "-m"):
-    theme = os.popen("ls -la /home/meet/personal/themes/alacritty-theme/themes | awk '{print $9}' | fzf").read()
+    theme = os.popen(f"ls -la {home_dir}/develop/themes/alacritty-theme/themes | rev | cut -d \" \" -f 1 | rev | fzf").read()
     theme = theme.strip().split()[0]
+    print(f"Selected theme - {theme}")
 else:
     theme = sys.argv[1]
     print(f"Selected theme - {theme}")
 
-with open('/home/meet/personal/git/dotfiles/alacritty/alacritty.toml', 'r') as toml_config:
+config_file = f'{home_dir}/develop/dotfiles/alacritty/alacritty.toml'
+with open(config_file, 'r') as toml_config:
     config = toml.load(toml_config)
-    config['import'] = [base_path + theme]
+    config['general']['import'] = [base_path + theme]
 
-with open('/home/meet/personal/git/dotfiles/alacritty/new_alacritty.toml', 'w') as new_toml_config:
+new_config_file = f'{home_dir}/develop/dotfiles/alacritty/new_alacritty.toml'
+with open(new_config_file, 'w') as new_toml_config:
     toml.dump(config, new_toml_config)
 
-os.popen("cp /home/meet/personal/git/dotfiles/alacritty/alacritty.toml /home/meet/personal/git/dotfiles/alacritty/alacritty-bak.toml").read()
-os.popen("mv /home/meet/personal/git/dotfiles/alacritty/new_alacritty.toml /home/meet/personal/git/dotfiles/alacritty/alacritty.toml").read()
+backup_config_file = f'{home_dir}/develop/dotfiles/alacritty/alacritty-bak.toml'
+os.popen(f"cp {config_file} {backup_config_file}").read()
+os.popen(f"mv {new_config_file} {config_file}").read()

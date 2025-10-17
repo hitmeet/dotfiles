@@ -1,9 +1,3 @@
-import = [ "/home/meet/personal/themes/alacritty-theme/themes/breeze.toml",]
-
-[shell]
-program = "/bin/zsh"
-args = [ "--login", "-c", "/home/meet/personal/git/dotfiles/alacritty/theme.sh",]
-
 [env]
 TERM = "xterm-256color"
 
@@ -13,7 +7,10 @@ opacity = 0.9
 blur = true
 
 [font]
-size = 23
+size = 15.5
+
+[general]
+import = [ "/home/mpatel/develop/themes/alacritty-theme/themes/catppuccin.toml",]
 
 [window.padding]
 x = 10
@@ -21,6 +18,10 @@ y = 10
 
 [font.normal]
 family = "Hasklug Nerd Font Mono"
+
+[terminal.shell]
+program = "/bin/zsh"
+args = [ "--login", "-c", "/home/mpatel/develop/dotfiles/alacritty/theme.sh",]
 
 [cursor.style]
 shape = "Underline"

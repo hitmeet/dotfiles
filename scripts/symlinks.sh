@@ -60,3 +60,13 @@ if [ ! -L ~/.config/tmux ]; then
 else
   echo "tmux config exists... Skipping"
 fi
+
+
+current_alacritty=$(pwd)/alacritty
+if [ ! -L ~/.config/alacritty ]; then
+  echo -n "Alacritty config does not exist... "
+  echo "Creating a symlink"
+  ln -s $current_alacritty ~/.config/alacritty
+else
+  echo "Alacritty config exists... Skipping"
+fi
