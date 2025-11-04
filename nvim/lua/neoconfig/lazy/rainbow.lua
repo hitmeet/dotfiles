@@ -1,14 +1,8 @@
 return {
   {
-    "HiPhish/nvim-ts-rainbow2",
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_fiele_lines = nil,
-        }
-      }
-    end
+    "HiPhish/rainbow-delimiters.nvim",
+    config = function ()
+      require('rainbow-delimiters.setup').setup({})
+    end,
   }
 }

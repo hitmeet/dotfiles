@@ -7,25 +7,29 @@ function ColorMyPencils(color)
 end
 
 function SetTheme()
-  local themeMap = {}
-  themeMap[1] = "rose-pine"
-  themeMap[2] = "catppuccin"
-  themeMap[3] = "sonokai"
-  --local theme = themeMap[math.random(1, 3)]
-  --print(theme)
-  --ColorMyPencils(theme)
-  ColorMyPencils(themeMap[3])
+  ColorMyPencils("rose-pine")
 end
 
 
 return {
   {
-    "catppuccin/nvim",
-    name = 'catppuccin'
+    "projekt0n/github-nvim-theme",
+    name = "github-theme"
   },
   {
-    "sainnhe/sonokai",
-    name = "sonokai"
+    'ribru17/bamboo.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('bamboo').setup {
+        -- optional configuration here
+      }
+      require('bamboo').load()
+    end,
+  },
+  {
+    "olimorris/onedarkpro.nvim",
+    name = "onedarkpro"
   },
   {
     "rose-pine/neovim",
@@ -39,5 +43,5 @@ return {
       })
       SetTheme()
     end
-  },
+  }
 }

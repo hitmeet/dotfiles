@@ -4,7 +4,7 @@ return {
   config = function()
 --    local currentscheme = vim.cmd("echo g:colors_name")
     require("lualine").setup({
-      options = {theme = "rose-pine"}
+      options = {theme = "auto"}
     })
   end
 

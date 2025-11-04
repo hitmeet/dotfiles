@@ -16,11 +16,23 @@ return {
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
     vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
     vim.keymap.set('n', '<leader>hh', builtin.keymaps, {})
-    vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+    vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>qf', builtin.quickfix, {})
     vim.keymap.set('n', '<leader>vsh', builtin.search_history, {})
     vim.keymap.set('n', '<leader>vch', builtin.command_history, {})
+
+    vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
+
+    --diagnostics in current file
+    vim.keymap.set('n', '<leader>df', function ()
+      builtin.diagnostics({bufnr = 0})
+    end, {noremap = true, silent = true})
+
+    --diagnostics in workspace
+    vim.keymap.set('n', '<leader>dw', function ()
+      builtin.diagnostics()
+    end, {noremap = true, silent = true})
 
     -- search for selected word
     vim.keymap.set('n', '<leader>pws', function()
