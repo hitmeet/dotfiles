@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
 vim.keymap.set("n", "<C-x>", function() vim.cmd(":q!") end)
 
 vim.keymap.set("n", "G", "Gzz")

@@ -62,11 +62,11 @@ else
 fi
 
 
-current_alacritty=$(pwd)/alacritty
-if [ ! -L ~/.config/alacritty ]; then
-  echo -n "Alacritty config does not exist... "
+current_wezterm=$(pwd)/wezterm/wezterm.lua
+if [ ! -f ~/.wezterm.lua ]; then
+  echo -n "Wezterm config does not exist... "
   echo "Creating a symlink"
-  ln -s $current_alacritty ~/.config/alacritty
+  ln -s $current_wezterm ~/.wezterm.lua
 else
-  echo "Alacritty config exists... Skipping"
+  echo "Wezterm config exists... Skipping"
 fi

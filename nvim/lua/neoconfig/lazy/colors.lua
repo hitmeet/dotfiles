@@ -7,7 +7,7 @@ function ColorMyPencils(color)
 end
 
 function SetTheme()
-  ColorMyPencils("rose-pine")
+  ColorMyPencils("bamboo")
 end
 
 

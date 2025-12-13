@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 alias v='nvim'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
@@ -73,7 +80,7 @@ _fzf_comprun(){
 }
 
 export PATH=$PATH:$HOME/.local/bin
-eval "$(oh-my-posh init zsh --config $HOME/develop/dotfiles/oh-my-posh/oh-my-posh.toml)"
+# eval "$(oh-my-posh init zsh --config $HOME/develop/dotfiles/oh-my-posh/oh-my-posh.toml)"
 
 hypershot_dir=~/screenshots/
 if [ ! -d "$hypershot_dir" ]; then
@@ -83,3 +90,7 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+source ~/develop/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
