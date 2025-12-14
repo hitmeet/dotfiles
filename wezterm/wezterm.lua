@@ -2,15 +2,15 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Lilex Nerd Font")
-config.font_size = 14
+-- config.font = wezterm.font("Lilex Nerd Font")
+config.font_size = 13.5
 
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
 
--- config.window_background_opacity = 0.85
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 20
 
 local schemes = {}

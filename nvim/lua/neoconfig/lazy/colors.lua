@@ -7,11 +7,15 @@ function ColorMyPencils(color)
 end
 
 function SetTheme()
-  ColorMyPencils("bamboo")
-end
+    ColorMyPencils("rose-pine")
+  end
 
 
 return {
+  {
+    "LunarVim/darkplus.nvim",
+    name = "darkplus"
+  },
   {
     "projekt0n/github-nvim-theme",
     name = "github-theme"
